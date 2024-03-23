@@ -1,0 +1,59 @@
+.chartBox{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    .box-info{
+      flex:1;
+        display: flex;
+        flex-direction: column ;
+        justify-content: space-between;
+        
+
+        .title{
+            display: flex;
+            align-items: center;
+            gap:10px;
+            font-weight: bold;
+            font-size: 120%;
+            display: block;
+            .sub-title
+        {
+            margin-top: 12px;
+            color: #039855;
+            font-weight: bold;
+            font-size: 150%;
+            
+
+        }
+        .sub-title-1
+        {
+            
+           
+            padding-top: 5px;
+            color: #8E93A6;
+            font-weight:100;
+            font-size: 50%;
+
+        }
+            
+            
+
+        }
+        
+    }
+    .chart-info{
+        
+        flex:1;
+        flex-direction: column;
+       
+    
+        justify-content: space-between;
+        .chart{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+
+
+}

@@ -11,11 +11,19 @@
      list-style: none;
  }
  
- body{
-     background-color: azure;
-     font-family: "Open Sans", sans-serif;
- }
- 
+ body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+    background-color: black;
+  
+    color: whitesmoke;
+
+}
+
  .side-menu
  {
      position: fixed;
@@ -24,7 +32,9 @@
      height: 100%;
      box-sizing: border-box;
      padding: 30px 20px;
-     transition: width .2s ease-in;
+     transition: width .1s ease-in;
+     padding-top: 5px;
+     
  }
 
  .side-menu .logo-name
@@ -34,24 +44,61 @@
     font-size: larger;
     display: inline-block;
     padding-left: 30px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 70%;
+    transform: translateY(-70%);
+   
  }
+
+ /* .side-menu .top-section .logo-name span{
+    
+    opacity: 1;
+    transition: opacity .1s ;
+
+ } */
+
+ .side-menu.inactive .logo-name
+{
+    opacity: 0;
+    width: 0;
+    height: 0;
+    /* overflow: hidden; */
+
+}
  .side-menu.inactive{
      width: 95px;
  }
  
  .side-menu .top-section .logo
  {
-     width: 55px;
+     width: 60px;
      height: 55px;
      overflow: hidden;
      display: inline-block;
  
  }
+
+ .side-menu .top-section .logo span
+ {
+    opacity: 1;
+    transition: opacity .1s ease-in-out ;
  
+ }
+
+ .side-menu.inactive .top-section .logo
+ {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: 0;
+ 
+ }
+
+
+
  .side-menu .top-section{
      position: relative;
+     
+     
  }
  
  .side-menu .top-section .logo img{
@@ -72,7 +119,8 @@
  
      
  }
- 
+
+
  .side-menu.inactive .top-section .toggle-menu-icon
  {
      right: -50px;
@@ -80,7 +128,8 @@
  
 
  
- 
+
+/* for the line that divide the top section from the menu list */
 .divider {
     width: 100%;
     height: 1px;
@@ -89,14 +138,16 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
     position: absolute;
     left: 0;
-    
- 
 }
+/* end of divider section */
+
+
 
 
 .side-menu .main-menu
 {
     margin: 20px 0;
+
     
 }
 
@@ -114,6 +165,12 @@
 
  }
 
+ .side-menu .main-menu .menu-item.active{
+    background: #666;
+    border-radius: 20px;
+    color: #fff;
+ }
+
 .side-menu .main-menu .menu-item .menu-icon
 {
     display: inline-block;
@@ -124,26 +181,58 @@
     line-height: 40px;
     text-align: center;
     
-    
 }   
 
 .side-menu .main-menu .menu-item .down-logo
 {
     display: inline-block;
-    padding-left: 12px;
+    
+    position: relative;
+    padding-left: 120px;
+    transition: padding-left .01s ease-in;
+    
+
 }
 
+.side-menu.inactive .main-menu .menu-item .down-logo
+{
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+
+}
+
+ 
+.side-menu .main-menu .menu-item span{
+    position: absolute;
+    display: inline-block;
+    line-height: 40px;
+    opacity: 1;
+    transition: opacity .1s ease-in;
+}
+.side-menu.inactive .main-menu .menu-item span{
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+
+/* for the sub menu in the menu item list of the side menu */
 .side-menu .main-menu .sub-menu
 {
     color:white;
     text-decoration: none;
-
     border-left: 1px solid #666;
-    box-sizing: border-box;
     padding-left: 30px;
-    padding-top: 5px;
     margin-left: 40px;
     cursor: pointer;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height .1s ease-in;
+
 }
 
 .side-menu .main-menu .sub-menu a{
@@ -151,7 +240,30 @@
     margin: 20px 0;
     font-size: 15px;
     font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+
 }
+.side-menu .main-menu .sub-menu a.active{
+   
+    display:block;
+    
+   
+   
+    
+
+}
+
+.side-menu .main-menu .sub-menu.active{
+   max-height: 200px;
+    opacity: 1;
+}
+
+/* end of the sub menu in the the menu list  */
+
+
+
+/* for the footer of a side menu */
 .side-menu-footer
 {
     width: 100%;
@@ -162,11 +274,13 @@
     left: 0;
     padding: 30px 20px;
     box-sizing: border-box;
-   
-
-
-
 }
+/* end of the footer */
+
+
+
+
+/* photo of user section in a side meun in the footer */
 
 .side-menu-footer .avatar
 {
@@ -174,34 +288,107 @@
     height: 40px;
     overflow: hidden;
     display: inline-block;
-   
-   
-
 }
-
 .side-menu-footer .avatar img
 {
     max-width: 100%;
     max-height: 100%;
 }
+/* end of photo of user section in a side meun in the footer */
+
+
+
+/* user section in the footer of a side menu */
 
 .side-menu-footer .user-info
 {
     display: inline-block;
-
+    position: absolute;
     margin: 0 10px;
-    color: white
+    color: white;
+    opacity: 1;
+    transition: opacity .1s ease-in;
 }
-
+.side-menu.inactive .side-menu-footer .user-info
+{
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: 0;
+}
 .side-menu-footer .user-info h5{
     font-size: 13px;
 }
-
 .side-menu-footer .user-info p{
     font-size: 13px;
 }
+/* end of user info section */
 
-.side-menu-footer .logout-icon{
-    display: inline-block;
-    cursor: pointer;
+.container{
+    margin-left: 270px;
+    transition: margin-left .1s ease-in;
+    padding: 50px;
 }
+
+.container.inactive{
+    margin-left: 130px;
+}
+
+
+.side-menu .main-menu-footer
+{
+    margin: 20px 0;
+    margin-top: 120px;
+    position: absolute;
+    overflow: hidden;
+ 
+    
+    
+  
+ 
+  
+
+}
+
+.side-menu .main-menu-footer .menu-item-footer
+{
+    color: white;
+   text-decoration: none;
+   font-size: 14px;
+   display: block;
+   font-weight: 200;
+   margin-top: 20px;
+   margin-left: 20px;
+   cursor: pointer;
+
+  
+
+}
+
+
+.side-menu .main-menu-footer .menu-item-footer.active{
+
+   color: #fff;
+}
+
+.side-menu .main-menu-footer .menu-item-footer span{
+  
+
+   
+    opacity: 1;
+    transition: opacity .1s ease-in;
+}
+.side-menu.inactive .main-menu-footer .menu-item-footer span{
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+
+
+.side-menu .main-menu-footer .sub-menu.active{
+   max-height: 200px;
+    opacity: 1;
+}
+

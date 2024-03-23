@@ -1,0 +1,47 @@
+.camera-container{
+   
+
+	
+    display: flex;
+    overflow: hidden;
+   
+   
+   
+
+
+   
+    video {
+        max-width: 100%;
+        max-height: 100%;
+       
+    }
+}
+
+
+// .home2 {
+//     display: grid;
+//     gap: 20px;
+//     // grid-template-columns: repeat(2, minmax(0, 1fr));
+//     // grid-auto-rows: minmax(180px, auto);
+//     // margin-top: 18px;
+
+//     .box {
+//         border-radius: 10px;
+//         border: 1px solid #1c1c1c;
+//         background-color: #1c1c1c;
+//         display: flex;
+//         justify-content: center;
+//         // align-items: center;
+
+//         img {
+//             width: 100%;
+//             height: 100%;
+//             object-fit: contain;
+//             object-position: center;
+//             border-radius: 10px; // This sets the border radius for the image inside the box
+            
+//         }
+//     }
+   
+   
+// }
