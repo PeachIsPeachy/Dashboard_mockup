@@ -10,93 +10,102 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { Time } from "react-html5video";
+
+function addLine(value, range) {
+  const min = value + range;
+  return min;
+}
 
 const data = [
   {
     name: "Page A",
-    uv: 2000,
-    pv: 1100,
-    amt: 1400,
+    Time: 4000,
+    pv: 110,
+    amt: 140,
   },
   {
     name: "Page B",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
+    Time: 4500,
+    pv: 139,
+    amt: 221,
   },
   {
     name: "Page C",
-    uv: 4000,
-    pv: 3800,
-    amt: 2290,
+    Time: 3500,
+    pv: 380,
+    amt: 229,
   },
   {
     name: "Page D",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
+    Time: 5780,
+    pv: 390,
+    amt: 200,
   },
   {
     name: "Page E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
+    Time: 7890,
+    pv: 480,
+    amt: 218,
   },
   {
     name: "Page F",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
+    Time: 6390,
+    pv: 380,
+    amt: 250,
   },
   {
     name: "Page G",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
+    Time: 9490,
+    pv: 430,
+    amt: 210,
   },
   {
     name: "Page A",
-    uv: 2000,
-    pv: 1100,
-    amt: 1400,
+    Time: 11800,
+    pv: 110,
+    amt: 140,
   },
   {
     name: "Page B",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
+    Time: 7900,
+    pv: 139,
+    amt: 220,
   },
   {
     name: "Page C",
-    uv: 3200,
-    pv: 3800,
-    amt: 2290,
+    Time: 6200,
+    pv: 380,
+    amt: 229,
   },
   {
     name: "Page D",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
+    Time: 10780,
+    pv: 390,
+    amt: 200,
   },
   {
     name: "Page E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
+    Time: 15090,
+    pv: 480,
+    amt: 218,
   },
   {
     name: "Page F",
-    uv: 2390,
-    pv: 3500,
-    amt: 2500,
+    Time: 19000,
+    pv: 350,
+    amt: 250,
   },
   {
     name: "Page G",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
+    Time: 16900,
+    pv: 430,
+    amt: 210,
   },
 ];
+data.forEach((item) => {
+  item.line = addLine(item.Time, 2000);
+});
 
 function AreaChartBox() {
   return (
@@ -118,21 +127,34 @@ function AreaChartBox() {
               height={400}
               data={data}
               margin={{
-                top: 10,
-                right: 30,
+                top: 5,
+                right: 0,
                 left: 0,
-                bottom: 0,
+                bottom: 10,
               }}
             >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
               <Tooltip />
               <Area
-                type="monotone"
-                dataKey="uv"
-                stroke="#8884d8"
-                fill="#8884d8"
+                type="natural"
+                dataKey="Time"
+                stroke="1A2332"
+                fill="url(#gradient)"
+              />
+
+              <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#0D1219" stop-opacity="1" />
+
+                  <stop offset="100%" stop-color="#1A2332" stop-opacity="0.7" />
+                </linearGradient>
+              </defs>
+
+              <Area
+                type="natural"
+                dataKey="line"
+                stroke="#2E90FA"
+                fill="none"
+                strokeWidth={1}
               />
             </AreaChart>
           </ResponsiveContainer>

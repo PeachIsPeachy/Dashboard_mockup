@@ -81,7 +81,7 @@ function ChartBox() {
               <CartesianGrid horizontal={false} strokeDasharray="3 3" />
 
               <Line
-                type="monotone"
+                type="linear"
                 dataKey="Velocity"
                 stroke="#039855"
                 strokeWidth={2}

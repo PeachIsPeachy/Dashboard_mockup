@@ -155,6 +155,8 @@ function BoxChart() {
                 fill="#2E90FA"
                 barSize={7}
                 shape={<RoundedBar />}
+                margin={{ top: 100 }}
+                baseValue={-100}
               />
               <Bar
                 dataKey="amt"

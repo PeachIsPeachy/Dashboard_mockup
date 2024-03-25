@@ -3,7 +3,7 @@ import SideMenu from "./components/SideMenu";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import MainPage from "./components/MainPage";
-// import TrafficFlowPage from "./components/TrafficPage/TrafficFlowPage";
+import TrafficFlowPage from "./components/TrafficPage/TrafficFlowPage";
 import Overview from "./components/Overview/Overview";
 
 const OverView = () => {
@@ -38,8 +38,8 @@ function App() {
         <div className={`container ${inactive ? "inactive" : ""}`}>
           <Routes>
             <Route exact path="/" element={<MainPage />} />
-            {/* <Route path="/traffic-flow" element={<TrafficFlowPage />} /> */}
-            <Route path="traffic-flow/overview" element={<Overview />} />
+            <Route path="/traffic-flow" element={<TrafficFlowPage />} />
+            {/* <Route path="traffic-flow/overview" element={<Overview />} /> */}
             <Route path="traffic-flow/simulation" element={<Simulation />} />
             <Route path="/historical-data" element={<HistoricalData />} />
             <Route path="/log-out" element={<LogOut />} />

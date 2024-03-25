@@ -12,13 +12,13 @@ import MenuItemFooter from "./MenuItemFooter";
 const menuItems = [
   { name: "Main", exact: true, to: "/", icon: cameraView },
   {
-    name: "Traffic Flow",
+    name: "Camera View",
     exact: true,
     to: "/traffic-flow",
     icon: trafficFlow,
     subIcon: downLogo,
     subMenus: [
-      { name: "Overview", to: "/traffic-flow/overview" },
+      // { name: "Overview", to: "/traffic-flow/overview" },
       { name: "Prediction", to: "/traffic-flow/prediction" },
     ],
   },
