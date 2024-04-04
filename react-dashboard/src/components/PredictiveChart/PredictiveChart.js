@@ -12,6 +12,8 @@ import {
 } from "recharts";
 import "../../styles/variables.scss";
 import "../../styles/responsive.scss";
+import logo from "../../assets/signIcon/arrow.svg";
+
 const data = [
   {
     name: "9:00",
@@ -109,6 +111,7 @@ function PredictiveChart() {
                 <li>Mon</li>
                 <li>Tue</li>
                 <li>Wed</li>
+                <img src={logo} alt="blue logo" />
               </ul>
             </div>
           </div>

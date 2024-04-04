@@ -4,6 +4,7 @@
 *{
     margin: 0;
     padding:0;
+    
  
  }
 
@@ -26,7 +27,8 @@ body {
     gap: 20px;
     grid-template-columns: repeat(2, minmax(0, 1fr)) repeat(3, minmax(0, 1fr)); // Updated grid-template-columns
     grid-auto-rows: minmax(130px, auto);
-    margin-top: 18px;
+    margin-top:-25px;
+
 
 
     .box {

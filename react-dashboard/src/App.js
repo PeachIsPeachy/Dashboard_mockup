@@ -5,17 +5,12 @@ import React, { useEffect, useState } from "react";
 import MainPage from "./components/MainPage";
 import TrafficFlowPage from "./components/TrafficPage/TrafficFlowPage";
 import Overview from "./components/Overview/Overview";
+import Simulation from "./components/Simulation/Simulation";
+import Header from "./components/Header/Header";
+import HistoricalData from "./components/HistoricalData/HistoricalData";
 
 const OverView = () => {
   return <h1>Overview Page</h1>;
-};
-
-const Simulation = () => {
-  return <h1>Simulation Page</h1>;
-};
-
-const HistoricalData = () => {
-  return <h1>Simulation Page</h1>;
 };
 
 const LogOut = () => {
@@ -34,13 +29,16 @@ function App() {
             setInactive(inactive);
           }}
         />
+        <div>
+          <Header />
+        </div>
 
         <div className={`container ${inactive ? "inactive" : ""}`}>
           <Routes>
             <Route exact path="/" element={<MainPage />} />
             <Route path="/traffic-flow" element={<TrafficFlowPage />} />
             {/* <Route path="traffic-flow/overview" element={<Overview />} /> */}
-            <Route path="traffic-flow/simulation" element={<Simulation />} />
+            <Route path="/simulation" element={<Simulation />} />
             <Route path="/historical-data" element={<HistoricalData />} />
             <Route path="/log-out" element={<LogOut />} />
           </Routes>
